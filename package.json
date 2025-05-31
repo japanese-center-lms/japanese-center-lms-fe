@@ -6,8 +6,7 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc -b && vite build",
-        "lint": "eslint .",
-        "preview": "vite preview"
+        "lint": "eslint . && prettier --check ."
     },
     "dependencies": {
         "@radix-ui/react-slot": "^1.2.3",
@@ -35,6 +34,7 @@
         "tw-animate-css": "^1.3.2",
         "typescript": "~5.8.3",
         "typescript-eslint": "^8.30.1",
-        "vite": "^6.3.5"
+        "vite": "^6.3.5",
+        "vitest": "^3.1.4"
     }
 }
