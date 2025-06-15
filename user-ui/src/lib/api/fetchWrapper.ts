@@ -6,3 +6,9 @@ export const throwIfError = async (response : Response) => {
         throw new Error(error);
     }
 }
+
+export const deserialize = async <T>(response : Response) : Promise<T> => {
+    await throwIfError(response);
+    const data: T = await response.json();
+    return data;
+}
