@@ -8,11 +8,8 @@ import {
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 import { useLoginForm } from "@/hooks/auth/useLoginForm"
-import { Link } from "react-router-dom";
 
 export default function LoginForm() {
     const { mutation, form } = useLoginForm();
@@ -55,6 +52,17 @@ export default function LoginForm() {
                             </FormItem>
                         )}
                     />
+
+                    {mutation.status === "pending" ? (
+                        <Button disabled className="w-full py-5">
+                            <Loader2 className="animate-spin"/>
+                            Loading
+                        </Button>
+                    ) : (
+                        <Button type="submit" className="w-full py-5">
+                            Login
+                        </Button>
+                    )}
                 </div>
             </form>
         </Form>
