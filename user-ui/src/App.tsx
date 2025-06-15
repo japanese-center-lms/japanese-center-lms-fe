@@ -1,7 +1,14 @@
-import { Button } from '@/components/ui/button';
+import { Routes, Route } from "react-router-dom"
+import LoginPage from './pages/LoginPage';
+import LandingPage from './pages/LandingPage';
 
-function App() {
-    return <Button variant="outline">Click me</Button>;
+export default function App() {
+    return (
+        <Routes>
+            <Route path="/" element={<LandingPage />}></Route>
+            <Route path="/login" element={<LoginPage />}></Route>
+        </Routes>
+    )
 }
 
-export default App;
+
